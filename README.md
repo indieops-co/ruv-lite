@@ -8,6 +8,11 @@
 **Works with** Claude  
 **Needs** Web search turned on in Claude, for live source checks (optional)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/demo-dark.gif">
+  <img src="docs/demo.gif" width="960" alt="A user asks whether a review-reply SaaS needs any rUv technology and ruv lite answers SKIP IT; then, in a sandbox folder, asks for the gentlest way to try Ruflo and gets USE IT, for a sandbox only, with a project-scope plugin command.">
+</picture>
+
 rUv's open-source ecosystem is huge: Ruflo for agent swarms, RuVector for vector and graph memory, AgentDB,
 RVF, MetaHarness, and dozens more. Most of the time the first question isn't "how do I use it?" but "do I
 need any of it?" ruv lite answers that one. It knows the ecosystem well, and it has explicit permission to

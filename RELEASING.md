@@ -55,7 +55,9 @@ RVF's open data bugs, SPARC v1.0's npm publication, and RuvNet Brain's hook list
      `node ../../indieops-brand/scripts/build-guide.mjs --skill ruv-lite --in guide.md --out guide.html`
    - **Cover:** `ruv-lite-cover.html`, made from LaunchSkeptic's layout with the one-icon theme toggle. Check it
      in light and dark, at desktop and 390px.
-   - **Demo GIF:** `docs/demo.gif` and `docs/demo-dark.gif` (not made yet).
+   - **Demo GIF:** `docs/demo.gif` and `docs/demo-dark.gif`, rendered from `../../Internal/ruv-lite/demo/`
+     (`bash render.sh`). Its consultations are real output: re-run the two prompts in `src/strings.ts` and
+     re-render when a release changes the card or the snapshot.
    - **Launch post:** `../../Internal/ruv-lite/launch-post.md`, because the repo is public.
 5. **Build the zip:** `./make-release.sh` → `release/IndieOps-Skilllet-2026-22-ruvlite-v<version>.zip`,
    unzipping to `ruv-lite/`.
