@@ -1,0 +1,58 @@
+{
+  "_comment": "Canonical sources behind every capability card. Cards cite them as [src:id]. 'fetch' is a raw or JSON URL that's cheaper to read than the page; 'check_for' says what the source is good for. Re-check all of them when the snapshot passes 90 days.",
+  "snapshot": "2026-10-07",
+  "sources": [
+    {"id": "ruvnet-profile", "name": "rUv profile README: Start here and the stack map", "url": "https://github.com/ruvnet/ruvnet", "fetch": "https://raw.githubusercontent.com/ruvnet/ruvnet/main/README.md", "kind": "index", "check_for": "what exists, how rUv describes each project, the Start here table"},
+    {"id": "ruvnet-llms", "name": "rUv index for language models", "url": "https://github.com/ruvnet/ruvnet/blob/main/llms.txt", "fetch": "https://raw.githubusercontent.com/ruvnet/ruvnet/main/llms.txt", "kind": "index", "check_for": "a compact, current list of projects"},
+    {"id": "ruvnet-projects-json", "name": "rUv projects.json", "url": "https://github.com/ruvnet/ruvnet/blob/main/data/projects.json", "fetch": "https://raw.githubusercontent.com/ruvnet/ruvnet/main/data/projects.json", "kind": "index", "check_for": "machine-readable project list with verification dates"},
+    {"id": "ruv-io-projects", "name": "ruv.io project directory", "url": "https://ruv.io/projects", "kind": "index", "check_for": "the full directory, by category"},
+    {"id": "ruvnet-discovery-plugin", "name": "rUv discovery plugin install guide", "url": "https://github.com/ruvnet/ruvnet/blob/main/plugins/ruvnet/docs/INSTALL.md", "kind": "docs", "check_for": "rUv's own discovery plugin and its tools"},
+
+    {"id": "ruflo-repo", "name": "Ruflo repo and README", "url": "https://github.com/ruvnet/ruflo", "fetch": "https://raw.githubusercontent.com/ruvnet/ruflo/main/README.md", "kind": "repo", "check_for": "plugin install commands, minimum Claude Code version, what the plugin path adds"},
+    {"id": "ruflo-userguide", "name": "Ruflo user guide", "url": "https://github.com/ruvnet/ruflo/blob/main/docs/USERGUIDE.md", "fetch": "https://raw.githubusercontent.com/ruvnet/ruflo/main/docs/USERGUIDE.md", "kind": "docs", "check_for": "requirements, init options, model routing"},
+    {"id": "ruflo-marketplace", "name": "Ruflo plugin marketplace", "url": "https://github.com/ruvnet/ruflo/blob/main/.claude-plugin/marketplace.json", "fetch": "https://raw.githubusercontent.com/ruvnet/ruflo/main/.claude-plugin/marketplace.json", "kind": "code", "check_for": "the current list of Ruflo plugins"},
+    {"id": "ruflo-init-source", "name": "Ruflo init executor (source)", "url": "https://github.com/ruvnet/ruflo/blob/main/v3/@claude-flow/cli/src/init/executor.ts", "fetch": "https://raw.githubusercontent.com/ruvnet/ruflo/main/v3/@claude-flow/cli/src/init/executor.ts", "kind": "code", "check_for": "exactly what init writes, including the global CLAUDE.md default"},
+    {"id": "ruflo-settings-generator", "name": "Ruflo settings generator (source)", "url": "https://github.com/ruvnet/ruflo/blob/main/v3/@claude-flow/cli/src/init/settings-generator.ts", "fetch": "https://raw.githubusercontent.com/ruvnet/ruflo/main/v3/@claude-flow/cli/src/init/settings-generator.ts", "kind": "code", "check_for": "hooks, permissions and model written to .claude/settings.json"},
+    {"id": "ruflo-skill", "name": "Ruflo's own SKILL.md", "url": "https://github.com/ruvnet/ruflo/blob/main/SKILL.md", "kind": "docs", "check_for": "when Ruflo itself says not to use it"},
+    {"id": "ruflo-core-plugin", "name": "ruflo-core plugin README", "url": "https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-core/README.md", "kind": "docs", "check_for": "what the core plugin installs: MCP server and hooks"},
+    {"id": "ruflo-releases", "name": "Ruflo releases", "url": "https://github.com/ruvnet/ruflo/releases", "kind": "releases", "check_for": "latest version, breaking changes"},
+    {"id": "ruflo-npm", "name": "ruflo on npm", "url": "https://www.npmjs.com/package/ruflo", "fetch": "https://registry.npmjs.org/ruflo/latest", "kind": "registry", "check_for": "current version and Node engine"},
+    {"id": "ruflo-metaharness-plugin", "name": "ruflo-metaharness plugin README", "url": "https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-metaharness/README.md", "kind": "docs", "check_for": "how Ruflo and MetaHarness relate"},
+    {"id": "ruflo-sparc-plugin", "name": "ruflo-sparc plugin README", "url": "https://github.com/ruvnet/ruflo/blob/main/plugins/ruflo-sparc/README.md", "kind": "docs", "check_for": "SPARC inside Ruflo"},
+    {"id": "claude-flow-memory-npm", "name": "@claude-flow/memory on npm", "url": "https://www.npmjs.com/package/@claude-flow/memory", "fetch": "https://registry.npmjs.org/@claude-flow%2Fmemory/latest", "kind": "registry", "check_for": "Ruflo memory's dependency on AgentDB"},
+
+    {"id": "metaharness-repo", "name": "MetaHarness repo and README", "url": "https://github.com/ruvnet/metaharness", "fetch": "https://raw.githubusercontent.com/ruvnet/metaharness/main/README.md", "kind": "repo", "check_for": "CLI commands, templates, what it generates, claims"},
+    {"id": "metaharness-userguide", "name": "MetaHarness user guide", "url": "https://github.com/ruvnet/metaharness/blob/main/docs/USERGUIDE.md", "kind": "docs", "check_for": "beginner path, when it isn't the right tool"},
+    {"id": "metaharness-studio", "name": "MetaHarness Studio", "url": "https://ruvnet.github.io/metaharness/", "kind": "docs", "check_for": "the no-install browser path"},
+    {"id": "metaharness-releases", "name": "MetaHarness releases", "url": "https://github.com/ruvnet/metaharness/releases", "kind": "releases", "check_for": "version, 1.0 status"},
+
+    {"id": "ruvector-repo", "name": "RuVector repo and README", "url": "https://github.com/ruvnet/RuVector", "fetch": "https://raw.githubusercontent.com/ruvnet/RuVector/main/README.md", "kind": "repo", "check_for": "the Known boundaries section, quickstart, surfaces"},
+    {"id": "ruvector-npm", "name": "ruvector on npm", "url": "https://www.npmjs.com/package/ruvector", "fetch": "https://registry.npmjs.org/ruvector/latest", "kind": "registry", "check_for": "current version, Node engine"},
+    {"id": "ruvector-crates", "name": "ruvector-core on crates.io", "url": "https://crates.io/crates/ruvector-core", "kind": "registry", "check_for": "Rust crate version"},
+    {"id": "ruvector-postgres", "name": "RuVector Postgres extension README", "url": "https://github.com/ruvnet/RuVector/blob/main/crates/ruvector-postgres/README.md", "kind": "docs", "check_for": "Postgres versions, Docker image, migration from pgvector"},
+    {"id": "ruvector-changelog", "name": "RuVector changelog", "url": "https://github.com/ruvnet/RuVector/blob/main/CHANGELOG.md", "kind": "releases", "check_for": "recent fixes and regressions"},
+    {"id": "ruvector-issues", "name": "RuVector issues", "url": "https://github.com/ruvnet/RuVector/issues", "kind": "issues", "check_for": "open data-fidelity bugs, including RVF SDK issues"},
+
+    {"id": "agentdb-repo", "name": "AgentDB repo and README", "url": "https://github.com/ruvnet/agentdb", "fetch": "https://raw.githubusercontent.com/ruvnet/agentdb/main/README.md", "kind": "repo", "check_for": "quick start paths, MCP command, commit activity"},
+    {"id": "agentdb-npm", "name": "agentdb on npm", "url": "https://www.npmjs.com/package/agentdb", "fetch": "https://registry.npmjs.org/agentdb", "kind": "registry", "check_for": "dist-tags: is latest still an alpha?"},
+    {"id": "agentdb-full-docs", "name": "AgentDB full documentation", "url": "https://github.com/ruvnet/agentdb/blob/main/docs/README-full.md", "kind": "docs", "check_for": "memory types, backends, claims"},
+    {"id": "agentdb-issues", "name": "AgentDB issues", "url": "https://github.com/ruvnet/agentdb/issues", "kind": "issues", "check_for": "the feedback no-op bug (#21) and CLI bugs"},
+
+    {"id": "rvf-readme", "name": "RVF README (inside RuVector)", "url": "https://github.com/ruvnet/RuVector/blob/main/crates/rvf/README.md", "fetch": "https://raw.githubusercontent.com/ruvnet/RuVector/main/crates/rvf/README.md", "kind": "docs", "check_for": "what an .rvf file holds, SDKs, quick start"},
+    {"id": "rvf-spec", "name": "RVF specification overview", "url": "https://github.com/ruvnet/RuVector/blob/main/docs/research/rvf/spec/00-overview.md", "kind": "docs", "check_for": "spec status: still draft/research?"},
+    {"id": "rvf-npm", "name": "@ruvector/rvf on npm", "url": "https://www.npmjs.com/package/@ruvector/rvf", "fetch": "https://registry.npmjs.org/@ruvector%2Frvf/latest", "kind": "registry", "check_for": "current version"},
+
+    {"id": "ruview-repo", "name": "RuView repo and README", "url": "https://github.com/ruvnet/RuView", "kind": "repo", "check_for": "what's real and what's not, hardware, Docker quickstart"},
+    {"id": "ruview-npm", "name": "@ruvnet/ruview on npm", "url": "https://www.npmjs.com/package/@ruvnet/ruview", "fetch": "https://registry.npmjs.org/@ruvnet%2Fruview/latest", "kind": "registry", "check_for": "current version"},
+
+    {"id": "sparc-repo", "name": "SPARC repo", "url": "https://github.com/ruvnet/sparc", "kind": "repo", "check_for": "whether v1.0 is published, the method"},
+    {"id": "sparc-pypi", "name": "sparc on PyPI", "url": "https://pypi.org/project/sparc/", "kind": "registry", "check_for": "the older Python CLI version"},
+
+    {"id": "agentic-flow-repo", "name": "agentic-flow repo", "url": "https://github.com/ruvnet/agentic-flow", "fetch": "https://raw.githubusercontent.com/ruvnet/agentic-flow/main/README.md", "kind": "repo", "check_for": "install command, what it does"},
+    {"id": "agentic-flow-npm", "name": "agentic-flow on npm", "url": "https://www.npmjs.com/package/agentic-flow", "fetch": "https://registry.npmjs.org/agentic-flow", "kind": "registry", "check_for": "stable vs alpha versions"},
+
+    {"id": "ruvnet-brain-repo", "name": "RuvNet Brain repo (third-party)", "url": "https://github.com/stuinfla/ruvnet-brain", "kind": "repo", "check_for": "installer flags, tools, North Star"},
+    {"id": "ruvnet-brain-npm", "name": "ruvnet-brain on npm", "url": "https://www.npmjs.com/package/ruvnet-brain", "fetch": "https://registry.npmjs.org/ruvnet-brain/latest", "kind": "registry", "check_for": "current version"},
+    {"id": "ruvnet-brain-hooks", "name": "RuvNet Brain hooks.json", "url": "https://github.com/stuinfla/ruvnet-brain/blob/main/plugin/hooks/hooks.json", "fetch": "https://raw.githubusercontent.com/stuinfla/ruvnet-brain/main/plugin/hooks/hooks.json", "kind": "code", "check_for": "which hooks the plugin registers"}
+  ]
+}

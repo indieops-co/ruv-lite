@@ -1,0 +1,347 @@
+{
+  "_comment": "The shortlist. A technology is a candidate only when one of its use_when signals matches something concrete in the request; one avoid_when hit usually caps fit at Low. Read the card before saying anything beyond one_line. ecosystem-map.md covers projects without a card.",
+  "snapshot": "2026-10-07",
+  "technologies": [
+    {
+      "id": "ruflo",
+      "name": "Ruflo",
+      "aliases": [
+        "claude-flow",
+        "claude flow",
+        "ruflo core",
+        "ruflo swarm",
+        "ruflo plugins",
+        "hive-mind"
+      ],
+      "category": "Agent orchestration",
+      "one_line": "Add-on for Claude Code and Codex: multi-agent runs, shared memory, workflows and model-routing hints, as plugins or a full environment.",
+      "card": "ruflo.md",
+      "status": "v3.54.1, releases near-daily, alpha dependencies",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "ruflo-repo",
+        "ruflo-userguide",
+        "ruflo-marketplace",
+        "ruflo-init-source"
+      ],
+      "use_when": [
+        "several agents must share searchable memory across runs or weeks",
+        "many agents change code in parallel and collide, needing worktree isolation and a shared decision record",
+        "per-step model routing or cost tracking at volume matters and would otherwise be hand-built",
+        "two or more of those needs at once, so assembling them from native Claude Code pieces is the bigger job",
+        "the user already runs Ruflo and one more Ruflo plugin fixes a current pain",
+        "the user explicitly wants to learn agent orchestration in a sandbox"
+      ],
+      "avoid_when": [
+        "parallelism or repetition is the only need: Claude Code's built-in subagents and a skill cover it",
+        "one agent can finish the task in one sitting",
+        "every step depends on the previous step's output",
+        "the product is a web app whose runtime isn't a coding assistant",
+        "the team needs a minimal, audited Claude Code configuration",
+        "nobody will track near-daily releases"
+      ],
+      "advantages": [
+        "multi-agent coordination",
+        "persistent agent memory",
+        "model routing",
+        "reusable learned patterns",
+        "cross-session intelligence"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "core"
+    },
+    {
+      "id": "ruvector",
+      "name": "RuVector",
+      "aliases": [
+        "ruvector-core",
+        "ruvector-postgres",
+        "@ruvector/wasm",
+        "ru vector"
+      ],
+      "category": "Vector and graph memory",
+      "one_line": "Embedded vector store in Rust with Node, browser and Postgres options: search by meaning locally, no server.",
+      "card": "ruvector.md",
+      "status": "npm 0.3.3 (pre-1.0), crates 2.x",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "ruvector-repo",
+        "ruvector-npm",
+        "ruvector-postgres"
+      ],
+      "use_when": [
+        "semantic search must run locally, offline, in the browser or at the edge",
+        "data must not leave the user's machine and an embedded store beats running a server",
+        "a Node.js or Rust project wants agent memory with a ready-made CLI and MCP server",
+        "vector and graph search are both needed in one embedded library"
+      ],
+      "avoid_when": [
+        "Postgres with pgvector already works for them",
+        "the stack is Python",
+        "they need stable semver, replication or incremental backups",
+        "the dataset is small (thousands of items)",
+        "queries rely on selective metadata filters"
+      ],
+      "advantages": [
+        "local execution",
+        "offline use",
+        "privacy",
+        "deployment footprint",
+        "persistent agent memory",
+        "specialized performance"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "core"
+    },
+    {
+      "id": "agentdb",
+      "name": "AgentDB",
+      "aliases": [
+        "agent db",
+        "agentdb mcp"
+      ],
+      "category": "Agent memory",
+      "one_line": "TypeScript library and MCP server that stores an agent's past tasks, outcomes and skills in a local file, searchable by meaning.",
+      "card": "agentdb.md",
+      "status": "latest is 3.0.0-alpha.20; quiet since 2026-07",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "agentdb-repo",
+        "agentdb-npm",
+        "agentdb-issues"
+      ],
+      "use_when": [
+        "the agent must improve across sessions from recorded outcomes, and a real feedback signal exists",
+        "the user already runs Ruflo or agentic-flow, whose memory uses it",
+        "a JavaScript or TypeScript prototype wants episode and skill memory as MCP tools today"
+      ],
+      "avoid_when": [
+        "memory just means app data, which belongs in a normal table",
+        "there's no feedback signal or too little repetition to learn from",
+        "production or client work that needs stable releases",
+        "the data already lives in Postgres or SQLite",
+        "the stack isn't JavaScript or TypeScript"
+      ],
+      "advantages": [
+        "persistent agent memory",
+        "cross-session intelligence",
+        "reusable learned patterns",
+        "local execution"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "core"
+    },
+    {
+      "id": "rvf",
+      "name": "RVF",
+      "aliases": [
+        "RuVector Format",
+        ".rvf",
+        "cognitive container",
+        "@ruvector/rvf",
+        "rvf-runtime"
+      ],
+      "category": "Portable memory format",
+      "one_line": "A single file that carries an agent's vectors, index, metadata and a tamper-evident history between programs.",
+      "card": "rvf.md",
+      "status": "research-draft spec, all 0.x, open data-fidelity bugs",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "rvf-readme",
+        "rvf-spec",
+        "rvf-npm",
+        "ruvector-issues"
+      ],
+      "use_when": [
+        "agent memory has to move between machines, tools or customers as one file",
+        "a signed, tamper-evident history of what an agent knew is a stated requirement",
+        "they use AgentDB or Ruflo memory and need to understand or move the .rvf files",
+        "research or experimentation with the format itself, in a sandbox"
+      ],
+      "avoid_when": [
+        "anything production-critical",
+        "other tools need to read the data",
+        "portable just means exportable",
+        "encryption is the requirement"
+      ],
+      "advantages": [
+        "portability",
+        "deployment footprint",
+        "offline use",
+        "local execution"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "core"
+    },
+    {
+      "id": "metaharness",
+      "name": "MetaHarness",
+      "aliases": [
+        "meta harness",
+        "agent-harness-generator",
+        "harness generator",
+        "metaharness studio"
+      ],
+      "category": "Agent harness generation",
+      "one_line": "Generates a stand-alone, publishable agent package (prompts, skills, MCP stub, host config) for a repo.",
+      "card": "metaharness.md",
+      "status": "v0.4.17, pre-1.0",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "metaharness-repo",
+        "metaharness-userguide",
+        "metaharness-studio"
+      ],
+      "use_when": [
+        "an agent setup has to be shipped to a client, team or the public as a versioned package",
+        "several repos each need a consistent, repo-specific agent configuration",
+        "the user wants to leave a full Ruflo project for something smaller they own",
+        "they want to preview a harness for their repo in a browser with nothing installed"
+      ],
+      "avoid_when": [
+        "one developer, one repo, nothing to distribute",
+        "they want a chatbot, a no-code platform, a hosted agent or fine-tuning",
+        "stability matters more than features"
+      ],
+      "advantages": [
+        "portability",
+        "deployment footprint",
+        "reusable learned patterns"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "core"
+    },
+    {
+      "id": "ruview",
+      "name": "RuView",
+      "aliases": [
+        "wifi-densepose",
+        "wifi densepose",
+        "wifi sensing"
+      ],
+      "category": "WiFi sensing",
+      "one_line": "Camera-free presence, activity and pose sensing from WiFi signals, using inexpensive boards. Research-grade.",
+      "card": "ruview.md",
+      "status": "research and prototype; npm 0.9.1",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "ruview-repo",
+        "ruview-npm"
+      ],
+      "use_when": [
+        "the project senses people or spaces and cameras aren't acceptable",
+        "the user is comfortable with hardware and research-grade accuracy",
+        "a lab, hobby or proof-of-concept sensing build"
+      ],
+      "avoid_when": [
+        "medical, safety-critical or legally sensitive use",
+        "the need is ordinary software: apps, agents, search, memory",
+        "a standard presence sensor would do"
+      ],
+      "advantages": [
+        "privacy",
+        "local execution",
+        "specialized performance"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "core"
+    },
+    {
+      "id": "sparc",
+      "name": "SPARC",
+      "aliases": [
+        "sparc methodology",
+        "ruflo-sparc",
+        "sparc modes"
+      ],
+      "category": "Development method",
+      "one_line": "Five gated phases for building with agents: Specification, Pseudocode, Architecture, Refinement, Completion.",
+      "card": "sparc.md",
+      "status": "method stable; v1.0 tool unpublished",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "sparc-repo",
+        "ruflo-sparc-plugin"
+      ],
+      "use_when": [
+        "features are big enough that a written spec and design step pay off",
+        "the agent keeps building the wrong thing and needs gates that force a plan first",
+        "they already run Ruflo and want the method inside it"
+      ],
+      "avoid_when": [
+        "small changes and bug fixes",
+        "the team already has a planning habit that works",
+        "they'd only adopt it through a heavy tool"
+      ],
+      "advantages": [
+        "reusable learned patterns"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "related"
+    },
+    {
+      "id": "agentic-flow",
+      "name": "agentic-flow",
+      "aliases": [
+        "agentic flow"
+      ],
+      "category": "Agent workflows and model switching",
+      "one_line": "Toolkit for agent workflows and per-task model or provider switching on Claude Code and the Agent SDK; Ruflo builds on it.",
+      "card": "agentic-flow.md",
+      "status": "2.1.3 stable, 3.0 alpha in progress",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "agentic-flow-repo",
+        "agentic-flow-npm"
+      ],
+      "use_when": [
+        "a developer builds agent workflows in code and wants model or provider switching ready-made",
+        "they need a piece of Ruflo's underlying layer without the full environment"
+      ],
+      "avoid_when": [
+        "a beginner wants multi-agent work inside Claude Code",
+        "one model and one provider are fine",
+        "the dependency tree must be free of alphas"
+      ],
+      "advantages": [
+        "model routing",
+        "multi-agent coordination"
+      ],
+      "lightest_path_level": "LOW",
+      "family": "related"
+    },
+    {
+      "id": "ruvnet-brain",
+      "name": "RuvNet Brain",
+      "aliases": [
+        "ruvnet brain",
+        "ruvnet-brain",
+        "search_ruvnet"
+      ],
+      "category": "Ecosystem knowledge for Claude Code (third-party)",
+      "one_line": "Third-party Claude Code plugin by Stuart Kerr: source-level search over rUv projects, plus hooks that advocate rUv capabilities every session.",
+      "card": "ruvnet-brain.md",
+      "status": "4.5.17, third-party, staged-candidate releases",
+      "snapshot": "2026-10-07",
+      "sources": [
+        "ruvnet-brain-repo",
+        "ruvnet-brain-hooks"
+      ],
+      "use_when": [
+        "the user has decided to build on the rUv stack in Claude Code and wants grounded answers all day",
+        "they want Claude blocked from asserting rUv capabilities without checking source",
+        "they've graduated past ruv lite and want an advocate for the stack"
+      ],
+      "avoid_when": [
+        "they're still deciding whether to use rUv at all",
+        "they don't want hooks injecting text or gating writes in every session",
+        "they need a predictable, minimal Claude Code setup for a team"
+      ],
+      "advantages": [
+        "cross-session intelligence"
+      ],
+      "lightest_path_level": "MEDIUM",
+      "family": "related"
+    }
+  ]
+}
