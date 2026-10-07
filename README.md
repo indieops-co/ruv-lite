@@ -131,6 +131,8 @@ trigger has been met. Without it everything stays in the chat and works the same
 ## What's inside
 
 ```
+ruv-lite-cover.html      start here
+guide.html               the guide: the three calls, reading THE CALL, the ecosystem on one page
 SKILL.md                 the decision policy Claude follows on every answer
 references/
   advise.md scout.md explain.md apply.md     one file per mode, loaded only when needed

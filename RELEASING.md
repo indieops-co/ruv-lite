@@ -50,8 +50,13 @@ RVF's open data bugs, SPARC v1.0's npm publication, and RuvNet Brain's hook list
    ```
    Release gates: Unnecessary rUv Recommendation Rate **under 10%**, complete THE CALL card on every run.
    Target for later versions: under 5%. See `evals/README.md`.
-4. **The rest of the release checklist** in BRAND.md: guide, cover page, demo GIF and launch post. The repo is
-   public, so the launch post goes in `../../Internal/ruv-lite/`, not `marketing/`.
+4. **The rest of the release checklist** in BRAND.md:
+   - **Guide:** edit `guide.md`, then rebuild so the chooser matches the catalogue:
+     `node ../../indieops-brand/scripts/build-guide.mjs --skill ruv-lite --in guide.md --out guide.html`
+   - **Cover:** `ruv-lite-cover.html`, made from LaunchSkeptic's layout with the one-icon theme toggle. Check it
+     in light and dark, at desktop and 390px.
+   - **Demo GIF:** `docs/demo.gif` and `docs/demo-dark.gif` (not made yet).
+   - **Launch post:** `../../Internal/ruv-lite/launch-post.md`, because the repo is public.
 5. **Build the zip:** `./make-release.sh` → `release/IndieOps-Skilllet-2026-22-ruvlite-v<version>.zip`,
    unzipping to `ruv-lite/`.
 6. Set the catalogue entry's `status` to `shipped` once it's downloadable.
@@ -62,3 +67,4 @@ RVF's open data bugs, SPARC v1.0's npm publication, and RuvNet Brain's hook list
 |---|---|---|---|---|---|---|---|
 | 2026-10-07 | 0.1.0 | Sonnet, snapshot | 0% (0/31) | 1/8 | 38/40 | 40/40 | First full run. Too conservative: 2/8 positives got USE IT; it treated a do-it-yourself native build as free. |
 | 2026-10-07 | 0.1.0 | Sonnet, snapshot | 0% (0/7) | 0/8 | 15/15 | 15/15 | After the honest-baseline rule and Ruflo plugin table: 6/8 positives USE IT. Re-ran the 15 calibration-sensitive scenarios only; run all 40 before release. |
+| 2026-10-07 | 0.1.0 | Sonnet, snapshot | 0% (0/32) | 0/8 | 40/40 | 40/40 | Full run after calibration. USE IT on 6/8 positives (s03 and s08 got a defensible CONSIDER LATER). Cost about $6. |
