@@ -2,7 +2,7 @@
 
 **Tell it what you're building. It tells you which rUv tools are worth it, and which aren't.**
 
-*An IndieOps Skilllet — a copyable skill folder that does one job properly.* · [indieops.co](https://indieops.co)
+*Skilllet. Fine-tuned Agentic superpowers.* · [indieops.co](https://indieops.co)
 
 **Runs on** macOS · Windows · Linux  
 **Works with** Claude  
